@@ -43,6 +43,7 @@ namespace TechJobsConsoleAutograded6
                     }
                     else
                     {
+
                         List<string> results = JobData.FindAll(columnChoice);
 
                         Console.WriteLine(Environment.NewLine + "*** All " + columnChoices[columnChoice] + " Values ***");
@@ -132,10 +133,20 @@ namespace TechJobsConsoleAutograded6
             return choiceKeys[choiceIdx];
         }
 
-        // TODO: complete the PrintJobs method.
+        // TODO: complete the PrintJobs method.//write if statement!!!
         public void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            Console.WriteLine("PrintJobs is not implemented yet");
+            foreach (Dictionary<string, string> job in someJobs)
+            {
+                Console.WriteLine($"{Environment.NewLine}*****");
+                foreach(KeyValuePair<string, string> thing in job)
+                {
+                    Console.WriteLine($"{thing.Key}: {thing.Value}");
+                    
+                }
+                    Console.WriteLine("*****");
+
+            }
         }
     }
 }
