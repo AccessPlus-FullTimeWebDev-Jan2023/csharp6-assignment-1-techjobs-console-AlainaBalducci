@@ -44,10 +44,23 @@ namespace TechJobsConsoleAutograded6
         //TODO: Complete the FindByValue method
         public static List<Dictionary<string, string>> FindByValue(string value)
         {
+            //.Contains(value);
             // load data, if not already loaded
             LoadData();
+            List<Dictionary<string, string>> newList = new List<Dictionary<string, string>>();
+            foreach (Dictionary<string, string> job in AllJobs)
+            {
+                foreach (string thing in job.Keys)
+                {
+                    if (job[thing].Contains(value))
+                    {
+                        newList.Add(job);
+                    }
+                }
+            }
 
-            return null;
+
+            return newList;
         }
 
         /**
