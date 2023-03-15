@@ -52,7 +52,7 @@ namespace TechJobsConsoleAutograded6
             {
                 foreach (string thing in job.Keys)
                 {
-                    if (job[thing].Contains(value))
+                    if (job[thing].ToLower().Contains(value.ToLower()))
                     {
                         newList.Add(job);
                     }
